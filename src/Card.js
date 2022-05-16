@@ -3,10 +3,11 @@ import './Card.css'
 import React from 'react'
 
 class temp {
-  constructor(title, image, author) {
+  constructor(title, image, author, author_photo) {
     this.title = title;
     this.body = image;
     this.author = author;
+    this.author_photo = author_photo;
   }
 
   get cardDetails() {
@@ -18,10 +19,14 @@ let card1 = new temp()
 
 card1.title = "The Big Steppers"
 card1.author = "Mr Morale"
+card1.body = 'https://picsum.photos/600/400/?random=1'
+card1.author_photo = 'https://picsum.photos/600/400/?random=3'
 
 let card2 = new temp();
 card2.title = 'Human Business'
 card2.author = 'Eazy'
+card2.body = 'https://picsum.photos/600/400/?random'
+card2.author_photo = 'https://picsum.photos/600/400/?random=4'
 
 
 
@@ -33,7 +38,7 @@ const Card = () => {
         <article className="overflow-hidden rounded-lg shadow-lg bg-white">
 
           <a href="https://picsum.photos/600/400/?random=1">
-            <img alt="Placeholder" className="block h-auto w-full" src="https://picsum.photos/600/400/?random=1"></img>
+            <img alt="Placeholder" className="block h-auto w-full" src={card1.body}/>
           </a>
 
           <header className="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -49,7 +54,7 @@ const Card = () => {
 
           <footer className="flex items-center justify-between leading-none p-2 md:p-4">
             <a className="flex items-center no-underline hover:underline text-black" href="https://picsum.photos/32/32/?random">
-              <img alt="Placeholder" className="block rounded-full" src="https://picsum.photos/32/32/?random"></img>
+              <img alt="Placeholder" className="block rounded-full" src="https://picsum.photos/32/32/?random"/>
               <p className="ml-2 text-sm">
                 Author: {card1.author}
               </p>
@@ -67,7 +72,7 @@ const Card = () => {
         <article className="overflow-hidden rounded-lg shadow-lg bg-white">
 
           <a href="https://picsum.photos/600/400/?random">
-            <img alt="Placeholder" className="block h-auto w-full" src="https://picsum.photos/600/400/?random"></img>
+            <img alt="Placeholder" className="block h-auto w-full" src={card2.body}/>
           </a>
 
           <header className="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -83,7 +88,7 @@ const Card = () => {
 
           <footer className="flex items-center justify-between leading-none p-2 md:p-4">
             <a className="flex items-center no-underline hover:underline text-black" href="https://picsum.photos/32/32/?random=2">
-              <img alt="Placeholder" className="block rounded-full" src="https://picsum.photos/32/32/?random=2"></img>
+              <img alt="Placeholder" className="block rounded-full" src="https://picsum.photos/32/32/?random=2"/>
               <p className="ml-2 text-sm">
                 Author: {card2.author}
               </p>
