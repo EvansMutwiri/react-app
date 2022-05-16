@@ -1,3 +1,15 @@
 .card {
     background: red;
+
+}
+.text-grey{
+    color: black;
+}
+
+.card1 {
+    height: 300px;
+    width: 400px;
+    background: green;
+    border-radius: 10px;
+    padding-left: 10px;
 }
